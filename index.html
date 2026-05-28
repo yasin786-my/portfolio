@@ -1,314 +1,476 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Yasin | Full-Stack Developer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Yasin | Full-Stack Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
-    
-    <header>
-        <div class="container header-container">
-            <a href="#" class="logo"
-            ><i class="fas fa-code"></i>MOHAMED YASIN
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo">
+        <i class="fas fa-code"></i>
+        Mohamed Yasin
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="close-btn" id="closeMobileNav" aria-label="Close menu">✕</button>
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#skills" onclick="closeMobile()">Skills</a>
+    <a href="#projects" onclick="closeMobile()">Projects</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+  </div>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Full-Stack Developer</span><span class="dot">★</span>
+      <span>React &amp; Node.js</span><span class="dot">★</span>
+      <span>Python &amp; Django</span><span class="dot">★</span>
+      <span>Chennai, India</span><span class="dot">★</span>
+      <span>Open to Work</span><span class="dot">★</span>
+      <span>Full-Stack Developer</span><span class="dot">★</span>
+      <span>React &amp; Node.js</span><span class="dot">★</span>
+      <span>Python &amp; Django</span><span class="dot">★</span>
+      <span>Chennai, India</span><span class="dot">★</span>
+      <span>Open to Work</span><span class="dot">★</span>
+      <!-- Duplicate for seamless loop -->
+      <span>Full-Stack Developer</span><span class="dot">★</span>
+      <span>React &amp; Node.js</span><span class="dot">★</span>
+      <span>Python &amp; Django</span><span class="dot">★</span>
+      <span>Chennai, India</span><span class="dot">★</span>
+      <span>Open to Work</span><span class="dot">★</span>
+      <span>Full-Stack Developer</span><span class="dot">★</span>
+      <span>React &amp; Node.js</span><span class="dot">★</span>
+      <span>Python &amp; Django</span><span class="dot">★</span>
+      <span>Chennai, India</span><span class="dot">★</span>
+      <span>Open to Work</span><span class="dot">★</span>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="hero-label">★ Available for hire</div>
+          <h1>
+            Building
+            <span class="line-accent">Digital</span>
+            <span class="line-yellow">Experiences</span>
+            That Matter
+          </h1>
+          <p class="hero-desc">
+            Full-Stack Developer passionate about building responsive, user-friendly web applications that solve real
+            problems.
+          </p>
+          <div class="hero-btns">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            <a href="#skills" class="btn btn-outline">My Skills</a>
+          </div>
         </div>
-    </header>
 
-    
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Building Digital Experiences That Matter</h1>
-                <p>Full-Stack Developer passionate about creating responsive, user-friendly web applications.</p>
-                <div class="hero-btns">
-                    <a href="#projects" class="btn">View My Work</a>
-                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
-                    <a href="#skills" class="btn btn">My Skills</a>
-                </div>
-            </div>
+        <div class="hero-visual">
+          <div class="hero-badge hero-badge-1">
+            <i class="fas fa-star"></i>&nbsp; Open to Work
+          </div>
+          <div class="hero-badge hero-badge-3 animate-spin-slow">★</div>
+          <div class="hero-card-main">
+            <div class="card-icon"><i class="fas fa-code"></i></div>
+            <h3>Mohamed<br>Yasin</h3>
+            <p>Full-Stack Developer<br>Chennai, India</p>
+          </div>
+          <div class="hero-badge hero-badge-2">
+            <i class="fas fa-map-marker-alt"></i>&nbsp; Chennai, India
+          </div>
+          <div class="hero-deco-star animate-spin-slow" style="animation-duration:20s;">✦</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
+  <hr class="divider">
 
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Mohamed Yasin</h3>
-                    <p>I'm an aspiring Full-Stack Developer with a passion for building responsive, user-friendly web applications. My journey in technology began with foundational languages like C and C++, and has since expanded to encompass modern web technologies.</p>
-                    <p>Currently, I'm deepening my expertise in HTML, CSS, JavaScript, React, Node.js, and MongoDB - transforming ideas into functional, impactful projects that solve real-world problems.</p>
-                    <p>My approach combines technical proficiency with creative problem-solving, ensuring that every application I build not only functions flawlessly but also delivers an exceptional user experience.</p>
-                    <a href="#contact" class="btn" style="margin-top: 20px;">Connect With Me</a>
-                </div>
-            </section>
-            </div>
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-label">01 — About Me</div>
+      <div class="about-grid">
 
-    
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-title">
-                <h2>My Skills</h2>
-            </div>
-            <div class="skills-container">
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Languages</h3>
-                    <ul>
-                        <li>C / C++</li>
-                        <li>Java</li>
-                        <li>Python</li>
-                        <li>JavaScript</li>
-                        <li>HTML5 / CSS3</li>
-                        <li>R (Learning)</li>
-                    </ul>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-layer-group"></i>
-                    </div>
-                    <h3>Frameworks & Libraries</h3>
-                    <ul>
-                        <li>Django (Basic)</li>
-                        <li>Flask</li>
-                        <li>Node.js (Learning)</li>
-                        <li>React (Learning)</li>
-                        <li>TensorFlow (Learning)</li>
-                        <li>NumPy (Learning)</li>
-                    </ul>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Database</h3>
-                    <ul>
-                        <li>MySQL</li>
-                        <li>MongoDB (Learning)</li>
-                        <li>SQLite</li>
-                    </ul>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3>Cloud & DevOps</h3>
-                    <ul>
-                        <li>AWS (Learning)</li>
-                        <li>Docker (Learning)</li>
-                        <li>Git / GitHub</li>
-                        <li>CI/CD Concepts</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>AI Tools</h3>
-                    <ul>
-                        <li>Cursor</li>
-                        <li>Replit</li>
-                        <li>Perplexity</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="about-id-card">
+          <div class="id-top">
+            <i class="fas fa-id-card"></i> Developer ID Card
+          </div>
+          <div class="about-avatar">
+            <img src="img/photo.jpg" alt="Mohamed Yasin"
+              style="width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <dl class="about-id-info">
+            <dt>Name</dt>
+            <dd>Mohamed Yasin</dd>
+            <dt>Role</dt>
+            <dd>Full-Stack Developer</dd>
+            <dt>Location</dt>
+            <dd>Chennai, India</dd>
+            <dt>Status</dt>
+            <dd>🟢 Available for hire</dd>
+          </dl>
         </div>
-    </section>
 
-    
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-title">
-                <h2>My Projects</h2>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Personal Portfolio Website</h3>
-                        <span class="wip">Work in Progress</span>
-                        <p>A responsive and visually appealing portfolio website designed to showcase my skills, projects, and contact details. The website features a clean layout, smooth navigation, and an engaging design that works across all devices.</p>
-                        <div class="tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>GitHub</span>
-                            <a href="https://yasin786-my.github.io/portfolio/" class="btn" style="margin-top: 20px;"><span>Link  <i class="fas fa-arrow-up-right-from-square"></i></span>
-</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Real-Time Chat Application</h3>
-                        <span class="wip">Work in Progress</span>
-                        <p>A modern chat application featuring real-time messaging, user authentication, and message history. Built with Node.js and WebSocket technology for instant communication.</p>
-                        <div class="tech">
-                            <span>Node.js</span>
-                            <span>WebSocket</span>
-                            <span>MongoDB</span>
-                            <span>Express</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Productivity Task Manager</h3>
-                        <span class="wip">Work in Progress</span>
-                        <p>A comprehensive task management application with drag-and-drop interface, priority settings, due date reminders, and local storage for offline access.</p>
-                        <div class="tech">
-                            <span>React</span>
-                            <span>JavaScript</span>
-                            <span>LocalStorage</span>
-                            <span>CSS3</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>E-Commerce Platform</h3>
-                        <span class="wip">Work in Progress</span>
-                        <p>A full-featured online shopping experience with product catalog, user accounts, shopping cart, and secure checkout process.</p>
-                        <div class="tech">
-                            <span>Django</span>
-                            <span>Python</span>
-                            <span>MySQL</span>
-                            <span>Stripe API</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-laptop"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Email Generator Bot</h3>
-                        <span class="wip">Work in Progress</span>
-                        <p>The Email Generator Bot is a web-based application designed to help users quickly generate professional and personalized emails using AI-powered templates and customization options. This tool is ideal for business professionals, job seekers, marketers, and anyone who wants to save time crafting effective email messages.</p>
-                        <div class="tech">
-                            <span>Django</span>
-                            <span>React</span>
-                            <span>MySQL</span>
-                            <span>API</span>
-                            <span>AWS</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="about-text-block">
+          <h3>Hey, I'm Mohamed Yasin.</h3>
+          <p>
+            I'm an aspiring Full-Stack Developer with a passion for building responsive, user-friendly web applications.
+            My journey began with foundational languages like C and C++, and has since expanded to encompass modern web
+            technologies.
+          </p>
+          <div class="highlight-box">
+            💡 Currently deepening expertise in HTML, CSS, JavaScript, React, Node.js, and MongoDB.
+          </div>
+          <p>
+            My approach combines technical proficiency with creative problem-solving — ensuring every application I
+            build not only functions flawlessly but delivers an exceptional user experience.
+          </p>
+          <a href="#contact" class="btn btn-black" style="margin-top: 28px;">Connect With Me →</a>
         </div>
-    </section>
 
-    
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Me</h2>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Email</h4>
-                            <a href="mailto:amohamedyasin7786@gmail.com">amohamedyasin7786@gmail.com</a>
-                        </div>
-                    </div>
+      </div>
+    </div>
+  </section>
 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Phone</h4>
-                            <a href="tel:+919087231271">+91 90872 31271</a>
-                        </div>
-                    </div>
+  <hr class="divider">
 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Location</h4>
-                            <p>Chennai, India</p>
-                        </div>
-                    </div>
-                </div>
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <div class="section-label">02 — My Skills</div>
+      <h2 class="section-heading">What I Work With</h2>
+      <div class="skills-grid">
 
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" class="form-control" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" class="form-control" required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
+        <div class="skill-card">
+          <div class="skill-icon-box"><i class="fas fa-code"></i></div>
+          <h3>Languages</h3>
+          <ul>
+            <li>C / C++</li>
+            <li>Java</li>
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>HTML5 / CSS3</li>
+          </ul>
         </div>
-    </section>
 
-    
-    <footer>
-        <div class="container">
-            <div class="logo" style="color: var(--white);">MOHAMED YASIN<span style="color: #ccc;"></span></div>
-            <p>Building the future one line of code at a time</p>
-
-            <div class="social-links">
-                <a href="https://github.com/yasin786-my"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mohamedyasin7786"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-
-            <p>&copy; 2025 Mohamed Yasin. All rights reserved.</p>
+        <div class="skill-card">
+          <div class="skill-icon-box"><i class="fas fa-layer-group"></i></div>
+          <h3>Frameworks</h3>
+          <ul>
+            <li>Flask</li>
+            <li>Node.js (Learning)</li>
+            <li>React (Learning)</li>
+            <li>TensorFlow (Learning)</li>
+            <li>NumPy (Learning)</li>
+          </ul>
         </div>
-    </footer>
 
-    <script src="js/main.js"></script>
+        <div class="skill-card">
+          <div class="skill-icon-box"><i class="fas fa-database"></i></div>
+          <h3>Database</h3>
+          <ul>
+            <li>MySQL</li>
+            <li>MongoDB (Learning)</li>
+            <li>Vector Base</li>
+            <li>SQLite</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon-box"><i class="fas fa-cloud"></i></div>
+          <h3>Cloud & DevOps</h3>
+          <ul>
+            <li>Docker (Learning)</li>
+            <li>Git / GitHub</li>
+            <li>CI/CD Concepts</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon-box"><i class="fas fa-robot"></i></div>
+          <h3>AI Tools</h3>
+          <ul>
+            <li>Cursor</li>
+            <li>Replit</li>
+            <li>GitHub Copilot</li>
+            <li>Antigravity </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-label">03 — Projects</div>
+      <h2 class="section-heading">My Work</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-img"><i class="fas fa-user"></i></div>
+          <div class="project-content">
+            <h3>Personal Portfolio Website</h3>
+            <span class="wip">Work in Progress</span>
+            <p>A responsive portfolio to showcase skills, projects, and contact details. Clean layout, smooth
+              navigation, and engaging design across all devices.</p>
+            <div class="tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>GitHub</span>
+              <a href="https://yasin786-my.github.io/portfolio/" target="_blank" class="btn btn-primary"
+                style="font-size:0.75rem; padding:8px 16px; width:auto;">
+                Live&nbsp;<i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img"><i class="fa-solid fa-chalkboard-user"></i></div>
+          <div class="project-content">
+            <h3>Learning HUB</h3>
+            <span class="wip">Work in Progress</span>
+            <p>A beautiful, production-ready, open-source learning management system.full role-based access control
+              (Admin, Teacher, Student), and YouTube-based course management.</p>
+            <div class="tech">
+              <span>Bcrypt</span>
+              <span>React</span>
+              <span>Flask</span>
+              <span>MySQL</span>
+              <a href="https://github.com/yasin786-my/learningHUB" target="_blank" class="btn btn-primary"
+                style="font-size:0.75rem; padding:8px 16px; width:auto;">
+                Link&nbsp;<i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img"><i class="fa-solid fa-calendar-check"></i></div>
+          <div class="project-content">
+            <h3>Schedule Crusher</h3>
+            <span class="wip">Work in Progress</span>
+            <p>ISM (Importance-based Schedule Management) — A smart academic planner that creates adaptive study
+              schedules by giving more time and priority to high-importance units based on actual user performance.</p>
+            <div class="tech">
+              <span>React Bits</span>
+              <span>React</span>
+              <span>Flask</span>
+              <span>Linear Regression</span>
+              <span>MySQL</span>
+              <a href="https://github.com/yasin786-my/Schedule-Crusher" target="_blank" class="btn btn-primary"
+                style="font-size:0.75rem; padding:8px 16px; width:auto;">
+                Link&nbsp;<i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img"><i class="fa-regular fa-newspaper"></i></div>
+          <div class="project-content">
+            <h3>Fake News Detection</h3>
+            <span class="wip">Work in Progress</span>
+            <p>AI-powered fake news detection using Retrieval-Augmented Generation (RAG) with FAISS vector search.</p>
+            <div class="tech">
+              <span>React 19</span>
+              <span>Flask</span>
+              <span>FAISS</span>
+              <span>NumPy</span>
+              <span>Pandas</span>
+              <span>Sentence-Transformers</span>
+              <a href="https://github.com/yasin786-my/Fake-News-Detection" target="_blank" class="btn btn-primary"
+                style="font-size:0.75rem; padding:8px 16px; width:auto;">
+                Link&nbsp;<i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img"><i class="fa-solid fa-dumbbell"></i></div>
+          <div class="project-content">
+            <h3>FitTracker</h3>
+            <span class="wip">Completed</span>
+            <p>A production-ready full-stack fitness tracking web application built with Flask + React.</p>
+            <div class="tech">
+              <span>React 18</span>
+              <span>Flask 3.x</span>
+              <span>MySQL 8</span>
+              <span>Bcrypt</span>
+              <a href="https://github.com/yasin786-my/Fittracker" target="_blank" class="btn btn-primary"
+                style="font-size:0.75rem; padding:8px 16px; width:auto;">
+                Link&nbsp;<i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img"><i class="fa-solid fa-microchip"></i></div>
+          <div class="project-content">
+            <h3> SmartBuild AI — PC Budget Optimizer</h3>
+            <span class="wip">Work in Progress</span>
+            <p>AI-powered PC build recommendations tailored to your budget and performance needs.</p>
+            <div class="tech">
+              <span>React 19</span>
+              <span>Express</span>
+              <span>MongoDB</span>
+              <span>NumPy</span>
+              <span>Flask</span>
+              <span>XGboost</span>
+              <a href="https://github.com/yasin786-my/SmartBuild-AI/tree/main" target="_blank" class="btn btn-primary"
+                style="font-size:0.75rem; padding:8px 16px; width:auto;">
+                Link&nbsp;<i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img"><i class="fa-solid fa-robot"></i></div>
+          <div class="project-content">
+            <h3>ai agent to automate website testing</h3>
+            <span class="wip">Completed</span>
+            <p>A robust automated testing platform powered by AI and real browser automation.</p>
+            <div class="tech">
+              <span>Flask</span>
+              <span>React</span>
+              <span>LangGraph</span>
+              <span>Google Gemini AI</span>
+              <span>Playwright (Async)</span>
+              <a href="https://github.com/springboardMentor14605/ai-agent-to-automate-website-testing" target="_blank"
+                class="btn btn-primary" style="font-size:0.75rem; padding:8px 16px; width:auto;">
+                Link&nbsp;<i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-label">04 — Contact</div>
+      <h2 class="section-heading">Let's Talk</h2>
+      <div class="contact-grid">
+
+        <div class="contact-info-block">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-text">
+              <h4>Email</h4>
+              <a href="mailto:amohamedyasin7786@gmail.com">amohamedyasin7786@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div class="contact-text">
+              <h4>Phone</h4>
+              <a href="tel:+919087231271">+91 90872 31271</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-text">
+              <h4>Location</h4>
+              <p>Chennai, India</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <div class="contact-text">
+              <h4>GitHub</h4>
+              <a href="https://github.com/yasin786-my" target="_blank">yasin786-my</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div class="contact-text">
+              <h4>LinkedIn</h4>
+              <a href="https://www.linkedin.com/in/mohamedyasin7786" target="_blank">mohamedyasin7786</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" class="form-control" placeholder="Your name..." required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-control" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" class="form-control" placeholder="What's on your mind?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-black">Send Message →</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">Mohamed Yasin</div>
+        <p class="footer-tagline">Building the future — one line of code at a time</p>
+        <div class="social-links">
+          <a href="https://github.com/yasin786-my" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/mohamedyasin7786" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+        <p class="footer-copy">© 2025 Mohamed Yasin. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
-        </html>
+
+</html>
