@@ -23,24 +23,74 @@ function closeMobile() {
 }
 
 // ===== CONTACT FORM =====
+function showToast(message, emoji = '🚧') {
+  const existing = document.getElementById('formToast');
+  if (existing) existing.remove();
+
+  const toast = document.createElement('div');
+  toast.id = 'formToast';
+  toast.innerHTML = `<span class="toast-emoji">${emoji}</span><span class="toast-msg">${message}</span>`;
+  toast.style.cssText = `
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #111;
+    color: #FFD93D;
+    padding: 14px 24px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+  `;
+  document.body.appendChild(toast);
+
+  requestAnimationFrame(() => {
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateX(-50%) translateY(0)';
+  });
+
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateX(-50%) translateY(20px)';
+    setTimeout(() => toast.remove(), 300);
+  }, 4000);
+}
+
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
     const btn = contactForm.querySelector('button[type="submit"]');
-    btn.textContent = '✓ Message Sent!';
-    btn.style.background = '#000';
-    btn.style.color = '#FFD93D';
+
+    // Loading state
+    btn.disabled = true;
+    btn.innerHTML = '<span style="display:inline-block;animation:spin 0.7s linear infinite;margin-right:8px;">⏳</span> Sending…';
+
     setTimeout(() => {
+      // Reset button
+      btn.disabled = false;
       btn.textContent = 'Send Message →';
-      btn.style.background = '';
-      btn.style.color = '';
-    }, 3000);
-    contactForm.reset();
+
+      // Show toast
+      showToast("We're working on the backend — check back soon!", '🚧');
+
+      contactForm.reset();
+    }, 1200);
   });
 }
+
+// Spin keyframe for loading icon
+const spinStyle = document.createElement('style');
+spinStyle.textContent = `@keyframes spin { to { transform: rotate(360deg); } }`;
+document.head.appendChild(spinStyle);
 
 // ===== SCROLL REVEAL =====
 const revealObserver = new IntersectionObserver((entries) => {
