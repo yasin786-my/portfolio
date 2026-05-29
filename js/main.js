@@ -1,3 +1,13 @@
+// ===== TOP BAR HEIGHT =====
+function setTopBarOffset() {
+  const topBar = document.getElementById('topBar');
+  if (!topBar) return;
+  const h = topBar.getBoundingClientRect().height;
+  document.body.style.paddingTop = h + 'px';
+}
+setTopBarOffset();
+window.addEventListener('resize', setTopBarOffset);
+
 // ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -6,7 +16,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const target = document.querySelector(targetId);
     if (!target) return;
     e.preventDefault();
-    window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+    const offset = document.getElementById('topBar')?.getBoundingClientRect().height || 70;
+    window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
   });
 });
 
@@ -32,23 +43,30 @@ function showToast(message, emoji = '🚧') {
   toast.innerHTML = `<span class="toast-emoji">${emoji}</span><span class="toast-msg">${message}</span>`;
   toast.style.cssText = `
     position: fixed;
-    bottom: 32px;
+    bottom: 24px;
     left: 50%;
     transform: translateX(-50%) translateY(20px);
     background: #111;
     color: #FFD93D;
-    padding: 14px 24px;
-    border-radius: 50px;
-    font-size: 15px;
-    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 3px solid #FFD93D;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif;
     display: flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    box-shadow: 4px 4px 0px #FFD93D;
     z-index: 9999;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    white-space: nowrap;
+    max-width: calc(100vw - 32px);
+    width: max-content;
+    text-align: center;
+    word-break: break-word;
+    white-space: normal;
+    box-sizing: border-box;
   `;
   document.body.appendChild(toast);
 
