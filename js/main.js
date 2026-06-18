@@ -81,6 +81,14 @@ function showToast(message, emoji = '🚧') {
     setTimeout(() => toast.remove(), 300);
   }, 4000);
 }
+// ── YOUR VERCEL URL (update after first deploy) ──
+const VERCEL_BACKEND = 'https://mohamedyasin-portfolio.vercel.app';
+
+// Auto-detect: on Vercel use relative path, on GitHub Pages use full Vercel URL
+function getApiUrl(path) {
+  const isVercel = window.location.hostname.includes('vercel.app');
+  return isVercel ? path : VERCEL_BACKEND + path;
+}
 
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
@@ -102,7 +110,7 @@ if (contactForm) {
     btn.innerHTML = '<span style="display:inline-block;animation:spin 0.7s linear infinite;margin-right:8px;">⏳</span> Sending…';
 
     try {
-      const response = await fetch('/api/send_email', {
+      const response = await fetch(getApiUrl('/api/send_email'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, message })
