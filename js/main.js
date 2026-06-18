@@ -84,24 +84,44 @@ function showToast(message, emoji = '🚧') {
 
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', function (e) {
+  contactForm.addEventListener('submit', async function (e) {
     e.preventDefault();
     const btn = contactForm.querySelector('button[type="submit"]');
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) {
+      showToast('Please fill in all fields', '⚠️');
+      return;
+    }
 
     // Loading state
     btn.disabled = true;
     btn.innerHTML = '<span style="display:inline-block;animation:spin 0.7s linear infinite;margin-right:8px;">⏳</span> Sending…';
 
-    setTimeout(() => {
-      // Reset button
+    try {
+      const response = await fetch('/api/send_email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message })
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        showToast('Message sent successfully! I\'ll get back to you soon.', '✅');
+        contactForm.reset();
+      } else {
+        showToast(data.error || 'Something went wrong. Please try again.', '❌');
+      }
+    } catch (error) {
+      showToast('Network error. Please check your connection and try again.', '❌');
+    } finally {
       btn.disabled = false;
       btn.textContent = 'Send Message →';
-
-      // Show toast
-      showToast("We're working on the backend — check back soon!", '🚧');
-
-      contactForm.reset();
-    }, 1200);
+    }
   });
 }
 
